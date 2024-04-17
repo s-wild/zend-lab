@@ -1,3 +1,7 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
+use App\PdfParser\PdfParser;
 
-phpinfo();
+// Create a new PdfParser object and use it
+$user = new PdfParser();
+$user->createParser("Jane Doe");
