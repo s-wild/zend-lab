@@ -4,4 +4,4 @@ use App\PdfParser\PdfParser;
 
 // Create a new PdfParser object and use it
 $user = new PdfParser();
-$user->createParser("Jane Doe");
+$user->createParser();
