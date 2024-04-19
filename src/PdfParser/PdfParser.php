@@ -5,19 +5,17 @@ namespace App\PdfParser;
 use App\Database\Database;
 
 class PdfParser {
-    private $database;
-    protected $pdf;
+    protected string $pdfTitle = "";
+    protected string $pdfContents = "";
     public function __construct() {
         $this->database = new Database();
     }
+    protected function getPdfContents() {}
 
-    public function createParser(): array
-    {
-        $this->pdf['name'] = 'Here is the name';
-        $this->pdf['contents'] = 'Here is the contents';
-        return $this->pdf;
-    }
+
+    
+    // @TODO Build more PDF functions
+    // protected function setPdfContents() {}
+    // protected function setPdfTitle() {}
+    // protected function getPdfTitle() {}
 }
-
-$pdfParse = new PdfParser();
-var_dump($pdfParse->createParser());
