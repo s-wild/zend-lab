@@ -6,9 +6,9 @@ use App\PdfParser\PdfContents;
 class SetContents extends PdfContents {
     public $name;
     public $contents;
-    public function init($name, $contents) {
-        $this->name = $name;
-        $this->contents = $contents;
+    public function init(array $args) {
+        $this->name = $args['name'];
+        $this->contents = $args['contents'];
     }
     public function setName($name) {
         return "test.pdf";
