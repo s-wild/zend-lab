@@ -1,23 +1,19 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
-use App\PdfParser\PdfDetails;
-use App\Database\Database;
-use App\Database\DatabaseMessages;
+use App\PdfParser\checkIfValidEmail;
+/*
+* Lab: Email regular expression
+*/ 
 
-/*
-* Lab: Prepared Statements
-*/ 
-// Please go into Database class and put in the correct credentials for your database.
-$database = new Database();
-$db = $database->connect();
-$table = $database->createDatabaseAndTable();
-$example = $database->insertPdf('Example PDF', 'Here are the contents of the PDF');
-$storedprocedure = $database->generateStoredProcedureGetAllPdfs();
-var_dump($storedprocedure);
-$allpdfs = $database->getAllPdfs();
-var_dump($allpdfs);
-$transactionpdfs = $database->generateTransaction();
-var_dump($transactionpdfs);
-/*
-* Lab: Stored Procedure
-*/ 
+$regularExpression = new checkIfValidEmail();
+// Regular expression to validate email addresses.
+$validEmail = $regularExpression->checkEmailRegularExpression('Test.test@t-est.com');
+var_dump($validEmail);
+
+$invalidEmail = $regularExpression->checkEmailRegularExpression('blahblah');
+var_dump($invalidEmail);
+
+// Found a filter function in PHP that can be used to sanitize email addresses and check.
+$checkIfValidEmailFilter = $regularExpression->checkIfValidEmailFilter('test@test.com');
+var_dump($checkIfValidEmailFilter);
+
